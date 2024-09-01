@@ -88,14 +88,14 @@ function solveSudoku(board) {
             setTimeout(() => {
             rows[row].children[col].textContent = c;
             }, timer);
-            timer += 2;
+            timer += 100;
             board[row][col] = c;
             if (dfs(board)) return true;
             else {
                 setTimeout(() => {
                 rows[row].children[col].textContent = "";
                 }, timer);
-                timer += 2;
+                timer += 100;
                 board[row][col] = "";
             }
           }
